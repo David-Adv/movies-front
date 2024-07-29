@@ -5,9 +5,10 @@ import './index.css'
 import { BrowserRouter, createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Layout } from './components/Layout.jsx'
 import { PAGE_ROUTES } from './constants/page_routes.js'
-import { Dashboard } from './pages/Dashboard.jsx'
 import { Login } from './pages/Login/Login.jsx'
 import { Home } from './pages/Home/Home.jsx'
+import { Movies } from './pages/Movies/Movies.jsx'
+import { ReviewUser } from './pages/ReviewUser/ReviewUser.jsx'
 
 
 const router = createBrowserRouter([
@@ -23,15 +24,24 @@ const router = createBrowserRouter([
       {
         path: PAGE_ROUTES.LOGIN,
         element : <Login></Login>
+      },{
+        path: PAGE_ROUTES.MOVIE,
+        element : <Movies></Movies>
+
+      },{
+        path: PAGE_ROUTES.REVIEW,
+        element : <ReviewUser></ReviewUser>
+
       },
+
       //  {
       //   path:"home",
       //   element : <Home></Home>
       // },
-    {
-      path: PAGE_ROUTES.DASHBOARD,
-      element : <Dashboard></Dashboard>
-    }
+    // {
+    //   path: PAGE_ROUTES.DASHBOARD,
+    //   element : <Dashboard></Dashboard>
+    // }
     ]
   }
 ])
