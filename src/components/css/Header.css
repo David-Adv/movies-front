@@ -1,0 +1,36 @@
+
+:root{
+    --bg-primary:#1c2754;
+}
+header{
+    /* border: 1px solid white; */
+}
+
+nav {
+    box-sizing: border-box;
+    /* margin: 0; */
+    border: 1px solid transparent;
+    background-color:var(--bg-primary) ;
+    height: 4rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul{
+    /* margin: 0; */
+    display: flex;
+    gap: 1rem;
+    font-size: 20px;
+}
+
+
+li{
+    list-style: none;
+}
+
+.link{
+    color: white;
+    text-decoration: none;
+}
