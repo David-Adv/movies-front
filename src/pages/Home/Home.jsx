@@ -9,24 +9,26 @@ export const Home = () => {
    <>
     <Carrousel/>
 
-    <h1 style={{fontSize:"24px",textAlign:"center"}}>All Movies</h1>
+    {/* <h1 style={{fontSize:"24px",textAlign:"center"}}>All Movies</h1> */}
+    
+      <InputSearch/>
+      
   
-    <div className='filterContainer'>
-      <div className='container-check'>
+  {/* <div> */}
+  <div className='container-check'>
           <Category/>
 
           <Category/>
         
-          
-
-      </div>
-      <InputSearch/>
-
     </div>
 
     <div className='Card-Container'>
     <Card></Card>
     </div>
+
+
+  {/* </div> */}
+      
 
  
 

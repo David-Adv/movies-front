@@ -20,10 +20,11 @@ export const Card = () => {
 
 <>
 <div class="product">
+
 											<div class="product-img">
 												{/* <img src="" height="365px" alt=""> */}
 												<div class="product-label">
-													<span class="sale"></span>
+													<span class="sale">#080c2b & #00eeff</span>
 													<span class="new"></span>
 												</div>
 											</div>

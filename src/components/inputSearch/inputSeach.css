@@ -1,0 +1,18 @@
+.inputContainer{
+margin: 0;
+border: 1px solid transparent;
+    background-color:#1c2754;
+    padding: 5px;
+}
+.search-bar{
+    box-sizing: border-box;
+    margin: 0;
+    background-color: white;
+    padding: 15px!important;
+    font-size: 16px;
+    border-radius: 10px;
+    height: 40px;
+    width: 30rem;
+    color: black;
+}
+

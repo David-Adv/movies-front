@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Movies = () => {
+export const Movie = () => {
   return (
     <div>Movies</div>
   )

@@ -7,7 +7,7 @@ import { Layout } from './components/Layout.jsx'
 import { PAGE_ROUTES } from './constants/page_routes.js'
 import { Login } from './pages/Login/Login.jsx'
 import { Home } from './pages/Home/Home.jsx'
-import { Movies } from './pages/Movies/Movies.jsx'
+import { Movie } from './pages/Movie/Movie.jsx'
 import { ReviewUser } from './pages/ReviewUser/ReviewUser.jsx'
 
 
@@ -26,7 +26,7 @@ const router = createBrowserRouter([
         element : <Login></Login>
       },{
         path: PAGE_ROUTES.MOVIE,
-        element : <Movies></Movies>
+        element : <Movie></Movie>
 
       },{
         path: PAGE_ROUTES.REVIEW,
