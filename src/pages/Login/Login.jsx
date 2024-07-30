@@ -16,12 +16,19 @@ const loginLink = () =>{
 
 }
 
-const handleSubmit=(e)=>{
+const handleSubmit= async(e)=>{
  e.preventDefault()
 const formData = new FormData(e.target)
 console.log({formData})
 const formProps = Object.fromEntries(formData)
 console.log({ formProps });
+
+try{
+const response =await axios.post("localhost:3000/login",formProps)
+return response.data
+}catch(error){
+  console.log(error)
+}
 
 }
 
