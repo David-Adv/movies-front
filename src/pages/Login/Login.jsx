@@ -24,11 +24,26 @@ console.log({formData})
 const formProps = Object.fromEntries(formData)
 console.log({ formProps });
 
+let url = '';
+
+if (action === 'active') {
+  console.log("users")
+  // Registration form
+  url = "http://localhost:3000/users";
+} else {
+  console.log("login")
+  // Login form
+  url = "http://localhost:3000/login";
+}
+
 try{
-const response =await axios.post("http://localhost:3000/login",formProps)
+  console.log(formProps)
+const response = await axios.post(url,formProps)
 return response.data
 }catch(error){
-  console.log(error)
+
+
+  console.log(error.response.data)
 }
 
 }
@@ -77,7 +92,7 @@ return response.data
               <h1>registration</h1>
 
               <div className="input-box">
-                <input type="text" name='userName' placeholder='UserName' required/>
+                <input type="text" name='user_name' placeholder='UserName' required/>
                 <FaUser className='icon'/>
               </div>
 
@@ -90,14 +105,6 @@ return response.data
                 <input type="password" name='password' placeholder='Password' required/>
                 <FaLock className='icon'/>
               </div>
-
-              {/* <div className="remember-forgot">
-                  <label >
-                    <input type="checkbox" />Remember me
-                  </label>
-                  <a href="#">Forgot password?</a>
-              </div> */}
-
               <button type='submit' >Register</button>
 
               <div className="register-link">
