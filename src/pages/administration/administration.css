@@ -1,0 +1,13 @@
+.btn-red{
+    background-color: red; /* Color de fondo rojo */
+    color: white;          /* Color del texto blanco */
+    border: none;          /* Sin borde */
+    padding: 4px 10px;    /* Espaciado interno (padding) */
+    text-align: center;    /* Alineación del texto al centro */
+    text-decoration: none; /* Sin subrayado */
+    display: inline-block; /* Se comporta como un elemento en línea pero con propiedades de bloque */
+    font-size: 15px;       /* Tamaño de fuente */
+    border-radius: 5px;    /* Bordes redondeados */
+    cursor: pointer;       /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s
+}

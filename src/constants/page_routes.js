@@ -5,6 +5,7 @@ export const PAGE_ROUTES = {
     HOME:"home",
     DASHBOARD:"dashboard",
     MOVIE:"movie",
-    REVIEW:"review"
+    REVIEW:"review",
+    ADMINISTRATION: "administration"
 
 }

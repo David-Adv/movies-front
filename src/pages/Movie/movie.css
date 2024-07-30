@@ -1,0 +1,7 @@
+.container-card-movie{
+    max-width: 900px;
+    max-height: calc(100vh - 7rem);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}

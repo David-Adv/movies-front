@@ -9,6 +9,7 @@ import { Login } from './pages/Login/Login.jsx'
 import { Home } from './pages/Home/Home.jsx'
 import { Movie } from './pages/Movie/Movie.jsx'
 import { ReviewUser } from './pages/ReviewUser/ReviewUser.jsx'
+import { Administration } from './pages/administration/Administration.jsx'
 
 
 const router = createBrowserRouter([
@@ -31,7 +32,9 @@ const router = createBrowserRouter([
       },{
         path: PAGE_ROUTES.REVIEW,
         element : <ReviewUser></ReviewUser>
-
+      },{
+        path: PAGE_ROUTES.ADMINISTRATION,
+        element : <Administration></Administration>
       },
 
       //  {

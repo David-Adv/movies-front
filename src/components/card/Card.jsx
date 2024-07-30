@@ -1,53 +1,28 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
-export const Card = () => {
+export const Card = ({movie,ind}) => {
+
+  const { Title, Year, imdbID, Type, Distributors, Poster } = movie;
+
   return (
     <div className="card bg-base-100 w-96 shadow-xl">
   <figure className="px-10 pt-10">
     <img
-      src="https://m.media-amazon.com/images/M/MV5BNjM0NTc0NzItM2FlYS00YzEwLWE0YmUtNTA2ZWIzODc2OTgxXkEyXkFqcGdeQXVyNTgwNzIyNzg@._V1_SX300.jpg"
+      src={Poster}
       alt="Shoes" 
       className="rounded-xl" />
   </figure>
   <div className="card-body items-center text-center">
-    <h2 className="card-title">Shoes!</h2>
+    <h2 className="card-title">{Title}</h2>
     <p>If a dog chews shoes whose shoes does he choose?</p>
-    <div className="card-actions">  
-      <button className="btn btn-primary">Buy Now</button>
+    <div className="card-actions"> 
+    <Link to={`/movie?id=${ind}`}> 
+       <button className="btn btn-primary">View movie</button>
+     </Link> 
     </div>
   </div>
 </div>
 
-// {/* <>
-// <div class="product">
-
-// 											<div class="product-img">
-// 												{/* <img src="" height="365px" alt=""> */}
-// 												<div class="product-label">
-// 													<span class="sale">#080c2b & #00eeff</span>
-// 													<span class="new"></span>
-// 												</div>
-// 											</div>
-// 											<div class="product-body">
-// 												<p class="product-category">Kids</p>
-// 												<h3 class="product-name"><a href="#">Silly jokes for kids</a></h3>
-// 												<h4 class="product-price">$12.0 <del class="product-old-price"></del></h4>
-// 												<div class="product-rating">
-// 													<i class="fa fa-star"></i>
-// 													<i class="fa fa-star"></i>
-// 													<i class="fa fa-star"></i>
-// 													<i class="fa fa-star"></i>
-// 													<i class="fa fa-star"></i>
-// 												</div>
-// 												<div class="product-btns">
-													
-// 													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-// 												</div>
-// 											</div>
-// 											<div class="add-to-cart">
-// 												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
-// 											</div>
-// 										</div>
-// </> */}
   )
 }
