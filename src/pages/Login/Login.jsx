@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import "./login.css"
 import { FaEnvelope, FaLock, FaUser } from "react-icons/fa";
+import axios from 'axios';
 
 export const Login = () => {
 
@@ -24,7 +25,7 @@ const formProps = Object.fromEntries(formData)
 console.log({ formProps });
 
 try{
-const response =await axios.post("localhost:3000/login",formProps)
+const response =await axios.post("https://localhost:3000/login",formProps)
 return response.data
 }catch(error){
   console.log(error)
