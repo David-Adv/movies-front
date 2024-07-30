@@ -16,22 +16,31 @@ const loginLink = () =>{
 
 }
 
+const handleSubmit=(e)=>{
+ e.preventDefault()
+const formData = new FormData(e.target)
+console.log({formData})
+const formProps = Object.fromEntries(formData)
+console.log({ formProps });
+
+}
+
 
   return (
    <div className='form-container'>
       
       <div className={`wrapper ${action}`}>
           <div className='form-box login'>
-            <form action="">
+            <form onSubmit={handleSubmit}>
               <h1>Login</h1>
 
               <div className="input-box">
-                <input type="text" placeholder='UserName' required/>
+                <input type="text" name='email' placeholder='Email' required/>
                 <FaUser className='icon'/>
               </div>
 
               <div className="input-box">
-                <input type="password" placeholder='Password' required/>
+                <input type="password" name='password' placeholder='Password' required/>
                 <FaLock className='icon'/>
               </div>
 
@@ -42,7 +51,7 @@ const loginLink = () =>{
                   <a href="#">Forgot password?</a>
               </div>
 
-              <button type='submit'>Login</button>
+              <button type='submit'>Login</button> 
 
               <div className="register-link">
                 <p>Don't have an account? 
@@ -56,21 +65,21 @@ const loginLink = () =>{
 
 
           <div className='form-box register'>
-            <form action="">
+            <form onSubmit={handleSubmit}>
               <h1>registration</h1>
 
               <div className="input-box">
-                <input type="text" placeholder='UserName' required/>
+                <input type="text" name='userName' placeholder='UserName' required/>
                 <FaUser className='icon'/>
               </div>
 
               <div className="input-box">
-                <input type="email" placeholder='Email' required/>
+                <input type="email" name='email' placeholder='Email' required/>
                 <FaEnvelope className='icon'/>
               </div>
 
               <div className="input-box">
-                <input type="password" placeholder='Password' required/>
+                <input type="password" name='password' placeholder='Password' required/>
                 <FaLock className='icon'/>
               </div>
 
@@ -81,7 +90,7 @@ const loginLink = () =>{
                   <a href="#">Forgot password?</a>
               </div> */}
 
-              <button type='submit'>Register</button>
+              <button type='submit' >Register</button>
 
               <div className="register-link">
                 <p>Already have an account <a href="#" onClick={ e =>{e.preventDefault(),loginLink()}}>Login</a></p>

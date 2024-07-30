@@ -7,6 +7,7 @@ export const Category = () => {
         <>
          <label style={{display:"flex",alignItems:"center",justifyContent:"space-evenly",gap:"3px "}} >
             <span style={{fontSize:"20px"}} className="label-text">action</span>
+            {/* <input type="checkbox" className='category-cb' /> */}
             <input type="checkbox" defaultChecked className="checkbox checkbox-info checkbox-xs" />
         </label>
 

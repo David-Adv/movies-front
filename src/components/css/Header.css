@@ -11,7 +11,7 @@ nav {
     /* margin: 0; */
     border: 1px solid transparent;
     background-color:var(--bg-primary) ;
-    height: 4rem;
+    height: 3.5rem;
     width: 100%;
     display: flex;
     justify-content: center;

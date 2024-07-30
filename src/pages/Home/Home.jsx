@@ -7,7 +7,7 @@ import { Category } from '../../components/category/Category'
 export const Home = () => {
   return (
    <>
-    <Carrousel/>
+    {/* <Carrousel/> */}
 
     {/* <h1 style={{fontSize:"24px",textAlign:"center"}}>All Movies</h1> */}
     
@@ -17,8 +17,8 @@ export const Home = () => {
   {/* <div> */}
   <div className='container-check'>
           <Category/>
-
           <Category/>
+          
         
     </div>
 
