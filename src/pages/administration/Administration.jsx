@@ -6,13 +6,13 @@ export const Administration = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    const url = "http://localhost:3000/users";
+    const url = "http://localhost:3000/users/find_deleted";
 
     const fetchData = async () => {
       try {
         const response = await axios.get(url);
         console.log(response.data);
-        // setData(response.data);
+        setData(response.data);
       } catch (error) {
         console.log(error);
       }
@@ -29,7 +29,7 @@ export const Administration = () => {
             <th>N</th>
             <th>Name</th>
             <th>Email</th>
-            <th>Create at</th>
+            <th>delete at</th>
             <th>Action</th>
           </tr>
         </thead>
