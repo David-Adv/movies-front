@@ -12,6 +12,8 @@ export const Home = () => {
   const [searchValue, setSearchValue] = useState("");
   const [selectedCategories, setSelectedCategories] = useState({});
 
+  const [showCards, setShowCards] = useState();
+
   useEffect(() => {
     const url = "../../../data.json";
 
@@ -20,7 +22,7 @@ export const Home = () => {
         const response = await axios.get("../../../data.json");
         setData(response.data);
         const allCategories = response.data.map((item) => item.category);
-        console.log(allCategories);
+        // console.log(allCategories);
         setCategory(Array.from(new Set(allCategories)));
       } catch (error) {
         console.log(error);
@@ -34,6 +36,10 @@ export const Home = () => {
     console.log("Search Value:", e.target.value);
   };
 
+  useEffect(() => {
+    displayCards();
+  }, [searchValue, selectedCategories, data]);
+
   const handleCategoryChange = (category) => {
     setSelectedCategories((prevState) => ({
       ...prevState,
@@ -41,7 +47,34 @@ export const Home = () => {
     }));
   };
 
-  console.log(category);
+  const displayCards = (receivedData) => {
+    let filteredData = [...data];
+
+    if (searchValue) {
+      filteredData = filteredData.filter((movie) =>
+        movie.Title.toLowerCase().includes(searchValue.toLowerCase())
+      );
+    }
+
+    if (Object.values(selectedCategories).some((x) => x)) {
+      const cleanedCategories = [];
+      const keys = Object.keys(selectedCategories);
+
+      keys.forEach((key) => {
+        if (selectedCategories[key]) cleanedCategories.push(key);
+      });
+
+      filteredData = filteredData.filter((item) =>
+        cleanedCategories.includes(item.category)
+      );
+    }
+
+    setShowCards(filteredData);
+  };
+  // console.log(displayCards);
+
+  // console.log(category);
+  console.log(selectedCategories);
   return (
     <>
       {/* <Carrousel/> */}
@@ -63,7 +96,7 @@ export const Home = () => {
       </div>
 
       <div className="Card-Container">
-        {data.map((movie, ind) => (
+        {showCards?.map((movie, ind) => (
           <Card key={ind} movie={movie} ind={ind}></Card>
         ))}
       </div>
