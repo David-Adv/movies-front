@@ -12,11 +12,12 @@ export const Administration = () => {
       try {
         const response = await axios.get(url);
         console.log(response.data);
-        setData(response.data);
+        // setData(response.data);
       } catch (error) {
         console.log(error);
       }
     };
+
     fetchData();
   }, []);
 
@@ -29,7 +30,6 @@ export const Administration = () => {
             <th>Name</th>
             <th>Email</th>
             <th>Create at</th>
-            <th>Delete at</th>
             <th>Action</th>
           </tr>
         </thead>
