@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export const Card = ({ movie, ind }) => {
   console.log(Object.values(movie));
-  const { title, year, image, category, description, review } = movie;
+  const { id, title, year, image, category, description, review } = movie;
 
   return (
     <div className="card bg-base-100 w-96 shadow-xl">
@@ -14,7 +14,7 @@ export const Card = ({ movie, ind }) => {
         <h2 className="card-title">{title}</h2>
         {/* <p>{description}</p> */}
         <div className="card-actions">
-          <Link to={`/movie?id=${ind}`}>
+          <Link to={`/movie?id=${id}`}>
             <button className="btn btn-primary">View movie</button>
           </Link>
         </div>
