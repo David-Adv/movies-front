@@ -15,11 +15,11 @@ export const Home = () => {
   const [showCards, setShowCards] = useState();
 
   useEffect(() => {
-    const url = "../../../data.json";
+    const url = "http://localhost:3000/movies";
 
     const fetchData = async () => {
       try {
-        const response = await axios.get("../../../data.json");
+        const response = await axios.get("http://localhost:3000/movies");
         setData(response.data);
         const allCategories = response.data.map((item) => item.category);
         // console.log(allCategories);
@@ -52,7 +52,7 @@ export const Home = () => {
 
     if (searchValue) {
       filteredData = filteredData.filter((movie) =>
-        movie.Title.toLowerCase().includes(searchValue.toLowerCase())
+        movie.title.toLowerCase().includes(searchValue.toLowerCase())
       );
     }
 
