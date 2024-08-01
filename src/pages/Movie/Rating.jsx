@@ -1,11 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./movie.css";
-export const Rating = () => {
+export const Rating = ({ onRatingChange }) => {
   const [rating, setRating] = useState(2);
 
   const handleRatingChange = (event) => {
     setRating(Number(event.target.value));
   };
+
+  useEffect(() => {
+    if (onRatingChange) {
+      onRatingChange(rating);
+    }
+  }, [rating, onRatingChange]);
 
   return (
     <div className="rating">

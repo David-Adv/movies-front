@@ -16,6 +16,8 @@ export const Comments = ({ idMovie, onCommentChange }) => {
       maxLength="200"
       className="textarea textarea-info"
       placeholder="Comment"
+      value={comment}
+      onChange={(e) => setComment(e.target.value)}
     ></textarea>
   );
 };

@@ -17,12 +17,13 @@ export const Movie = () => {
 
   const sendComment = async () => {
     const dataComment = {
-      // movieId: idMovie,
-      // review: comment,
+      movieId: queryId,
+      review: comment,
+      calification: rating,
     };
     try {
-      const response = await axios.post(url);
-      setData(response.data);
+      const response = await axios.post(url, dataComment);
+      console.log(data);
     } catch (error) {
       console.log(error);
     }
@@ -59,10 +60,10 @@ export const Movie = () => {
       </div>
 
       <div>
-        <Rating />
+        <Rating onRatingChange={setRating} />
 
         <div className="comments-container">
-          <Comments idMovie={queryId}></Comments>
+          <Comments idMovie={queryId} onCommentChange={setComment}></Comments>
           <button className="btn btn-outline btn-info" onClick={sendComment}>
             Info
           </button>
