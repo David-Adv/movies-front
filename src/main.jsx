@@ -17,8 +17,6 @@ import { Administration } from "./pages/administration/Administration.jsx";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute.jsx";
 
 const isAuthenticated = () => {
-  console.log("HOla");
-
   return false;
 };
 

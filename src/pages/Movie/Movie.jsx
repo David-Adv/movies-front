@@ -21,12 +21,13 @@ export const Movie = () => {
       review: comment,
       calification: rating,
     };
-    try {
-      const response = await axios.post(url, dataComment);
-      console.log(data);
-    } catch (error) {
-      console.log(error);
-    }
+    console.log(dataComment);
+    // try {
+    //   const response = await axios.post(url, dataComment);
+    //   console.log(data);
+    // } catch (error) {
+    //   console.log(error);
+    // }
   };
 
   useEffect(() => {

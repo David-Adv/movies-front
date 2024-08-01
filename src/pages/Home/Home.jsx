@@ -94,7 +94,7 @@ export const Home = () => {
         ))}
       </div>
 
-      <div className="Card-Container">
+      <div className="Card-Container ">
         {showCards?.map((movie, ind) => (
           <Card key={ind} movie={movie} ind={ind}></Card>
         ))}
