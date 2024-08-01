@@ -10,7 +10,13 @@ import { Home } from './pages/Home/Home.jsx'
 import { Movie } from './pages/Movie/Movie.jsx'
 import { ReviewUser } from './pages/ReviewUser/ReviewUser.jsx'
 import { Administration } from './pages/administration/Administration.jsx'
+import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute.jsx'
 
+
+const isAuthenticated = () => {
+  console.log("HOla")
+  return true
+}
 
 const router = createBrowserRouter([
 
@@ -31,10 +37,17 @@ const router = createBrowserRouter([
 
       },{
         path: PAGE_ROUTES.REVIEW,
-        element : <ReviewUser></ReviewUser>
+        
+        element :(
+                    <ProtectedRoute isAuthenticated={isAuthenticated()}>
+                    <ReviewUser></ReviewUser>
+                  </ProtectedRoute>
+        )
       },{
         path: PAGE_ROUTES.ADMINISTRATION,
-        element : <Administration></Administration>
+        element :(
+              <Administration/>
+        ) 
       },
 
       //  {
@@ -52,7 +65,7 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <RouterProvider  router={router}>
-      <App />
+
     </RouterProvider>
 
   </React.StrictMode>,

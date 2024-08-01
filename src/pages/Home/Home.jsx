@@ -11,7 +11,6 @@ export const Home = () => {
   const [category, setCategory] = useState([]);
   const [searchValue, setSearchValue] = useState("");
   const [selectedCategories, setSelectedCategories] = useState({});
-
   const [showCards, setShowCards] = useState();
 
   useEffect(() => {
@@ -19,7 +18,7 @@ export const Home = () => {
 
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/movies");
+        const response = await axios.get("../../../data.json");
         setData(response.data);
         const allCategories = response.data.map((item) => item.category);
         // console.log(allCategories);

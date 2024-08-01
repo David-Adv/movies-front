@@ -16,6 +16,16 @@ export const RowAdmin = ({ user }) => {
     }
   };
 
+  const fetchActive = async () => {
+    const url = `http://localhost:3000/users/restore-deleted${+id}`;
+    try {
+      const response = await axios.post(url, id);
+      // console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+  };  
+
   return (
     <>
       <tr className="border-white">
@@ -29,7 +39,7 @@ export const RowAdmin = ({ user }) => {
               delete
             </button>
           ) : (
-            <button className="btn-blue btn-primary">Active</button>
+            <button className="btn-blue btn-primary" onClick={fetchActive}>Active</button>
           )}
         </td>
       </tr>
