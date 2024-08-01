@@ -10,11 +10,11 @@ export const Card = ({ movie, ind }) => {
       <figure className="px-10 pt-10">
         <img src={image} alt="Shoes" className="rounded-xl" />
       </figure>
-      <div className="card-body items-center text-center">  
+      <div className="card-body items-center text-center">
         <h2 className="card-title">{title}</h2>
         {/* <p>{description}</p> */}
         <div className="card-actions">
-          <Link to={`/movie?id=${ind}`}>
+          <Link to={`/movie?id=${id}`}>
             <button className="btn btn-primary">View movie</button>
           </Link>
         </div>

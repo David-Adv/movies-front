@@ -36,7 +36,12 @@ export const Login = () => {
     try {
       console.log(formProps);
       const response = await axios.post(url, formProps);
+      console.log(response);
+      sessionStorage.setItem("idUser", response.data.id);
       sessionStorage.setItem("token", response.data.token);
+      sessionStorage.setItem("userName", response.data.userName);
+      sessionStorage.setItem("role", "user");
+
       return response.data;
     } catch (error) {
       alert("datos invalidos");

@@ -6,20 +6,25 @@ export const Administration = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    const url = "http://localhost:3000/users/find_deleted";
+    if (data.length <= 0) fetchData();
+    console.log(data);
+  }, [data]);
 
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(url);
-        console.log(response.data);
-        setData(response.data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
+  const url = "http://localhost:3000/users/find_deleted";
 
+  const fetchData = async () => {
+    try {
+      const response = await axios.get(url);
+      console.log(response.data);
+      setData(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const dataChange = () => {
     fetchData();
-  }, []);
+  };
 
   return (
     <div className="overflow-x-auto">
@@ -35,7 +40,7 @@ export const Administration = () => {
         </thead>
         <tbody>
           {data.map((user) => (
-            <RowAdmin key={user.id} user={user}></RowAdmin>
+            <RowAdmin key={user.id} func={dataChange} user={user}></RowAdmin>
           ))}
         </tbody>
       </table>

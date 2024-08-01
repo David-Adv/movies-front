@@ -18,7 +18,7 @@ export const Home = () => {
 
     const fetchData = async () => {
       try {
-        const response = await axios.get("../../../data.json");
+        const response = await axios.get(url);
         setData(response.data);
         const allCategories = response.data.map((item) => item.category);
         // console.log(allCategories);

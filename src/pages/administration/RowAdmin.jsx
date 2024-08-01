@@ -1,7 +1,7 @@
 import axios from "axios";
 import React from "react";
 
-export const RowAdmin = ({ user }) => {
+export const RowAdmin = ({ user, func }) => {
   // console.log(user);
   console.log(Object.keys(user));
   const { id, user_name, email, deleted_at } = user;
@@ -10,6 +10,10 @@ export const RowAdmin = ({ user }) => {
     const url = `http://localhost:3000/users/${+id}`;
     try {
       const response = await axios.delete(url, id);
+
+      alert("ELIMINADO");
+
+      func();
       // console.log(response);
     } catch (error) {
       console.log(error);
@@ -17,14 +21,15 @@ export const RowAdmin = ({ user }) => {
   };
 
   const fetchActive = async () => {
-    const url = `http://localhost:3000/users/restore-deleted${+id}`;
+    const url = `http://localhost:3000/users/restore-deleted/${+id}`;
     try {
       const response = await axios.post(url, id);
-      // console.log(response);
+      alert("activado");
+      func();
     } catch (error) {
       console.log(error);
     }
-  };  
+  };
 
   return (
     <>
@@ -39,7 +44,9 @@ export const RowAdmin = ({ user }) => {
               delete
             </button>
           ) : (
-            <button className="btn-blue btn-primary" onClick={fetchActive}>Active</button>
+            <button className="btn-blue btn-primary" onClick={fetchActive}>
+              Active
+            </button>
           )}
         </td>
       </tr>

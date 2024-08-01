@@ -1,72 +1,72 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
-import { BrowserRouter, createBrowserRouter, RouterProvider } from 'react-router-dom'
-import { Layout } from './components/Layout.jsx'
-import { PAGE_ROUTES } from './constants/page_routes.js'
-import { Login } from './pages/Login/Login.jsx'
-import { Home } from './pages/Home/Home.jsx'
-import { Movie } from './pages/Movie/Movie.jsx'
-import { ReviewUser } from './pages/ReviewUser/ReviewUser.jsx'
-import { Administration } from './pages/administration/Administration.jsx'
-import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute.jsx'
-
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App.jsx";
+import "./index.css";
+import {
+  BrowserRouter,
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import { Layout } from "./components/Layout.jsx";
+import { PAGE_ROUTES } from "./constants/page_routes.js";
+import { Login } from "./pages/Login/Login.jsx";
+import { Home } from "./pages/Home/Home.jsx";
+import { Movie } from "./pages/Movie/Movie.jsx";
+import { ReviewUser } from "./pages/ReviewUser/ReviewUser.jsx";
+import { Administration } from "./pages/administration/Administration.jsx";
+import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute.jsx";
 
 const isAuthenticated = () => {
-  console.log("HOla")
-  return true
-}
+  console.log("HOla");
+
+  return false;
+};
 
 const router = createBrowserRouter([
-
   {
-    path:"/",
-    element:<Layout/>,
+    path: "/",
+    element: <Layout />,
     children: [
       {
-        index:true,
-        element: <App/>
+        index: true,
+        element: <App />,
       },
       {
         path: PAGE_ROUTES.LOGIN,
-        element : <Login></Login>
-      },{
+        element: <Login></Login>,
+      },
+      {
         path: PAGE_ROUTES.MOVIE,
-        element : <Movie></Movie>
-
-      },{
+        element: <Movie></Movie>,
+      },
+      {
         path: PAGE_ROUTES.REVIEW,
-        
-        element :(
-                    <ProtectedRoute isAuthenticated={isAuthenticated()}>
-                    <ReviewUser></ReviewUser>
-                  </ProtectedRoute>
-        )
-      },{
+
+        element: (
+          <ProtectedRoute isAuthenticated={isAuthenticated()}>
+            <ReviewUser></ReviewUser>
+          </ProtectedRoute>
+        ),
+      },
+      {
         path: PAGE_ROUTES.ADMINISTRATION,
-        element :(
-              <Administration/>
-        ) 
+        element: <Administration />,
       },
 
       //  {
       //   path:"home",
       //   element : <Home></Home>
       // },
-    // {
-    //   path: PAGE_ROUTES.DASHBOARD,
-    //   element : <Dashboard></Dashboard>
-    // }
-    ]
-  }
-])
+      // {
+      //   path: PAGE_ROUTES.DASHBOARD,
+      //   element : <Dashboard></Dashboard>
+      // }
+    ],
+  },
+]);
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider  router={router}>
-
-    </RouterProvider>
-
-  </React.StrictMode>,
-)
+    <RouterProvider router={router}></RouterProvider>
+  </React.StrictMode>
+);
