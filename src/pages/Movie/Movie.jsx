@@ -2,12 +2,31 @@ import React, { useEffect, useState } from "react";
 import "./movie.css";
 import axios from "axios";
 import { Comments } from "./Comments";
+import { Rating } from "./Rating";
 export const Movie = () => {
   const query = location.search;
   const params = new URLSearchParams(query);
   const queryId = Number(params.get("id"));
 
   const [data, setData] = useState([]);
+
+  const [rating, setRating] = useState(2);
+  const [comment, setComment] = useState("");
+
+  const url = "http://localhost:3000/comments";
+
+  const sendComment = async () => {
+    const dataComment = {
+      // movieId: idMovie,
+      // review: comment,
+    };
+    try {
+      const response = await axios.post(url);
+      setData(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   useEffect(() => {
     const url = `http://localhost:3000/movies/${queryId}`;
@@ -26,7 +45,7 @@ export const Movie = () => {
   }, []);
 
   return (
-    <div className="container-all">
+    <div className="container-all d-flex">
       <div className="container-card-movie">
         <div className="hero bg-base-200 min-h-screen">
           <div className="hero-content flex-col lg:flex-row">
@@ -39,7 +58,16 @@ export const Movie = () => {
         </div>
       </div>
 
-      <Comments idMovie={queryId}></Comments>
+      <div>
+        <Rating />
+
+        <div className="comments-container">
+          <Comments idMovie={queryId}></Comments>
+          <button className="btn btn-outline btn-info" onClick={sendComment}>
+            Info
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
