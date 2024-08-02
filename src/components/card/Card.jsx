@@ -17,7 +17,7 @@ export const Card = ({ movie, ind }) => {
         {/* <p>{description}</p> */}
         <div className="card-actions">
           <Link to={`/movie?id=${id}`}>
-            <button className="btn btn-primary">View movie</button>
+            <button className="btn btn-primary" style={{background:"#0ef",border:"1px solid white",boxShadow: "0 0 2px white"}}>View movie</button>
           </Link>
         </div>
       </div>

@@ -48,13 +48,20 @@ export const Movie = () => {
 
   return (
     <div className="container-all d-flex">
-      <div className="container-card-movie">
-        <div className="hero bg-base-200 min-h-screen">
+      <div className="container-card-movie" >
+        <div className="hero bg-base-200 min-h-screen " style={{border:"2px solid #0ef",
+     boxShadow: "0 0 5px #0ef",
+     backgroundColor: "#081b29", marginTop:"1rem",marginBottom:"2rem"}}>
           <div className="hero-content flex-col lg:flex-row">
-            <img src={data.image} className="max-w-sm rounded-lg shadow-2xl" />
+            {/* <img src={data.image} className="max-w-sm rounded-lg shadow-2xl" /> */}
+            <img src="https://m.media-amazon.com/images/M/MV5BZDEyN2NhMjgtMjdhNi00MmNlLWE5YTgtZGE4MzNjMTRlMGEwXkEyXkFqcGdeQXVyNDUyOTg3Njg@._V1_SX300.jpg" className="max-w-sm rounded-lg shadow-2xl" />
+
             <div>
-              <h1 className="text-5xl font-bold">{data.title}</h1>
-              <p className="py-6">{data.description}</p>
+              {/* <h1 className="text-5xl font-bold">{data.title}</h1> */}
+              {/* <p className="py-6">{data.description}</p> */}
+
+              <h1 className="text-5xl font-bold">Spider-Man</h1>
+              <p className="py-6">Esta es una descripción de ejemplo</p>
             </div>
           </div>
         </div>
@@ -66,7 +73,7 @@ export const Movie = () => {
         <div className="comments-container">
           <Comments idMovie={queryId} onCommentChange={setComment}></Comments>
           <button className="btn btn-outline btn-info" onClick={sendComment}>
-            Info
+            Send
           </button>
         </div>
       </div>
