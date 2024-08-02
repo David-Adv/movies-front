@@ -6,7 +6,9 @@ export const Card = ({ movie, ind }) => {
   const { id, title, year, image, category, description, review } = movie;
 
   return (
-    <div className="card bg-base-100 w-96 shadow-xl">
+    <div className="card w-96 shadow-xl " style={{border:"2px solid #0ef",
+     boxShadow: "0 0 5px #0ef",
+     backgroundColor: "#081b29", maxWidth:"350px"}}>
       <figure className="px-10 pt-10">
         <img src={image} alt="Shoes" className="rounded-xl" />
       </figure>
