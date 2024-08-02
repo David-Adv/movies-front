@@ -17,7 +17,9 @@ import { Administration } from "./pages/administration/Administration.jsx";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute.jsx";
 
 const isAuthenticated = () => {
-  return false;
+  const token = sessionStorage.getItem("token")
+  if(!token) return false
+  return true;
 };
 
 const router = createBrowserRouter([

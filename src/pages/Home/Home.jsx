@@ -14,8 +14,8 @@ export const Home = () => {
   const [showCards, setShowCards] = useState();
 
   useEffect(() => {
-    // const url = "http://localhost:3000/movies";
-    const url = "../../../data.json";
+    const url = "http://localhost:3000/movies";
+    // const url = "../../../data.json";
 
 
     const fetchData = async () => {

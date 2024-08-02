@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./login.css";
 import { FaEnvelope, FaLock, FaUser } from "react-icons/fa";
 import axios from "axios";
+// import { useNavigate } from "react-router";
 
 export const Login = () => {
   const [action, setAction] = useState("");
@@ -22,6 +23,7 @@ export const Login = () => {
     console.log({ formProps });
 
     let url = "";
+    // const navigate = useNavigate()
 
     if (action === "active") {
       console.log("users");
@@ -41,6 +43,8 @@ export const Login = () => {
       sessionStorage.setItem("token", response.data.token);
       sessionStorage.setItem("userName", response.data.userName);
       sessionStorage.setItem("role", "user");
+  
+      alert("OK")
 
       return response.data;
     } catch (error) {
